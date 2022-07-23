@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>熱伝導方程式による金属棒の温度変換のシミュレーション</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="heatConduction.css">
+		<script src="../../js/vCanvas.js"></script>
+		<script src="../../js/2d.js"></script>
+		<script src="heatConduction.js"></script>
+  </head>
+<body>
+	<div id="operate">
+		<div>
+			金属棒の温度
+			<div id="curveFormula"></div>
+		</div>
+		<div>
+			<input type="range" id="points" name="points"
+			min="11" max="1001" step="2" value="301" onChange="changepCnt(this)">
+			<label for="points">精度:</label>
+			<span>301</span>
+			<span>点</span>
+		</div>
+		<div>
+			<input type="range" id="amount" name="amount"
+			min="0" max="10" step="0.1" value="1">
+			<label for="amount">変化量</label>
+		</div>
+		<div class="execution">
+			<button id="simulation" onclick="simulate(0)">アニメーション</button>
+			<button id="reset" onclick="initHeat()">初期化</button>
+		</div>
+		<div class="execution" id="execTrial">
+			<button id="trial" onclick="simulate(1)">1回</button>
+			<button id="trial" onclick="simulate(10)">10回</button>
+			<button id="trial" onclick="simulate(100)">100回</button>
+			<button id="trial" onclick="simulate(1000)">1000回</button>
+		</div>
+
+		<div>
+			<div>色温度見本</div>
+			<canvas id="colTem"></canvas>
+		</div>
+	</div>
+
+	<div id="display">
+		<div>
+			<div>グラフ</div>
+			<div class="graph" id="graph1">
+				<canvas></canvas>
+				<canvas></canvas>
+			</div>
+		</div>
+
+		<div>
+			<div>色温度</div>
+			<div class="graph">
+				<canvas id="graph2"></canvas>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

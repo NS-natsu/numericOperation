@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>曲面と平面が作る曲線</title>
+		<link rel="stylesheet" href="../../css/style.css">
+		<script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
+		<script src="../../js/curve.js"></script>
+		<script src="../../js/vCanvas.js"></script>
+		<script src="../../js/2d.js"></script>
+		<script src="divPlane.js"></script>
+	</head>
+<body>
+	<div id="operate">
+		<div>
+			曲面の関数式
+			<div id="curveFormula"></div>
+		</div>
+		<div>
+			<input type="range" id="rotateX" name="rotateX"
+			min="-1" max="1" step="0.00001" value="0">
+			<label for="rotateX">x軸回転</label>
+		</div>
+		<div>
+			<input type="range" id="rotateY" name="rotateY" 
+			min="-1" max="1" step="0.00001" value="0">
+			<label for="rotateY">y軸回転</label>
+		</div>
+		<div>
+			<input type="range" id="cutPos" name="cutPos"
+			min="-1" max="1" step="0.00001" value="0">
+			<label for="cutPos">平面の位置</label>
+		</div>
+		<div>
+			<input name="cut" type="radio" id="ux" checked>
+			<label for="ux">ux平面</label>
+			<input name="cut" type="radio" id="ut">
+			<label for="ut">ut平面</label>
+		</div>
+	</div>
+	<div id="display">
+		<div>
+			<div>曲面のモデル</div>
+			<canvas id="model"></canvas>
+		</div>
+		<div>
+			<div>断面の描く曲線</div>
+			<div class="graph" id="graph">
+				<canvas></canvas>
+				<canvas></canvas>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

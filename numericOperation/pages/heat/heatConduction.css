@@ -1,0 +1,17 @@
+.execution {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.execution > *{
+	margin-right: 12px;
+	margin-bottom: 12px;
+}
+
+#trial {
+	margin-top: 0;
+}
+
+button{
+	width: 120px;
+}
